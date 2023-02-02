@@ -1,0 +1,16 @@
+header {
+  background-color: #f5f5f5;
+  text-align: center;
+}
+.content{
+  display: grid;
+  text-align: center;
+}
+
+.content p {
+  grid-template-rows: 1/2;
+}
+
+.content img {
+  grid-template-rows: 2/3;
+}
