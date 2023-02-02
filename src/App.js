@@ -2,7 +2,8 @@
 
 import * as React from 'react'
 import './App.css'
-
+import { Header } from './Header'
+import { Description } from './Description'
 /**
  * 
  * @type {React.FC}
@@ -16,19 +17,16 @@ export const App = () => {
 
   const fetchDog = () => {
     fetch('https://dog.ceo/api/breeds/image/random')
-      .then((res) => res.json())
-      .then((data) => { 
+      .then(res => res.json())
+      .then(data => {
         setDogUrl(data.message)
       })
   }
+
   return (
     <div>
-      <header>Dogアプリ</header>
-      <div className='content'>
-        <p>犬の写真載せるアプリです</p>
-        <img src={dogUrl}></img>
-      </div>
-      <button onClick={fetchDog}>送信</button>
+      <Header />
+      <Description dogUrl={dogUrl} fetchDog={fetchDog} />
     </div>
   )
 }
